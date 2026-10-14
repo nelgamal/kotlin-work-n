@@ -10,4 +10,29 @@ import com.github.ajalt.mordant.terminal.Terminal
 
 fun main(args: Array<String>) {
     // Add your code here
+    if (args.size !=3) {
+        println("Error: Three values required")
+        exitProcess(1)
+    }
+
+    val initial = args[0].toDouble()
+    val maximum = args[1].toDouble()
+    val increment = args[2].toDouble()
+
+    if (increment <= 0.0) {
+        println("Error: Increment must be positive")
+        exitProcess(1)
+    }
+
+    var celsius = initial 
+
+    println("%7s %10s".format("Celsius", "Fahrenheit"))
+
+    while (celsius <= maximum) {
+        val farenheit = (celsius * 9.0 / 5.0) + 32.0
+
+        println("%7.1f %10.1f".format(celsius, farenheit))
+
+        celsius += increment 
+    }
 }
