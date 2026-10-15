@@ -25,6 +25,6 @@ fun isValidTriangle(triangle: Triangle): Boolean {
     val side2 = triangle.second
     val side3 = triangle.third
     
-    return side1 < side2 + side3 && side2 < side1 + side3 && side3 < side2 + side3
+    return side1 < side2 + side3 && side2 < side1 + side3 && side3 < side2 + side1
 }
 // Add isValidTriangle() and triangleArea() functions here
