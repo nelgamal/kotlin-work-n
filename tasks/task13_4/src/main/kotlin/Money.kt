@@ -1,1 +1,14 @@
 // Task 13.4: Money class
+data class Money(val euros: Int, val cents: Int) {
+    init {
+        require(euros >= 0)
+        require(cents in 0..99)
+    }
+
+    operator fun plus(other: Money): Money {
+        val totalCents = cents + other.cents
+        val totalEuros = euros + other.euros + totalCents / 100
+
+        return Money(totalEuros, totalCents % 100)
+    }
+}
